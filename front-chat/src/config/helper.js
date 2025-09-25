@@ -1,7 +1,7 @@
 export const timeAgo = (date) => {
-  const now = new Date();
-  const past = new Date(date);
-  const diff = Math.floor((now - past) / 1000); // difference in seconds
+   const now = Date.now(); // Get current time in milliseconds (UTC)
+  const past = new Date(date).getTime(); // Get past time in milliseconds (UTC)
+  const diff = Math.floor((now - past) / 1000); 
 
   if (diff < 60) {
     return `${diff} second${diff !== 1 ? "s" : ""} ago`;
