@@ -10,7 +10,7 @@ const JoinCreateChat = () => {
 
   const [detail, setDetail] = useState({
     roomId: "",
-    userName: "Praveen",
+    userName: "",
   });
 
   const { currentUser, roomId, connected, setCurrentUser, setRoomId, setConnected } = useChatContext();
