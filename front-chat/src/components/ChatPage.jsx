@@ -232,6 +232,7 @@ useEffect(() => {
         <p>{message.content}</p>
       )}
                 <p className="text-xs text-gray-300">{timeAgo(message.timeStamp)}</p>
+                  {console.log("Message timestamp:", message.timeStamp)}
                 </div>
                 </div>
               </div>
