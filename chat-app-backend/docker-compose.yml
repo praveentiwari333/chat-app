@@ -1,0 +1,46 @@
+##To combine and store and build docker image and mongodb
+#version: '3.8'
+#
+#services:
+#  mongo:
+#    image: mongo:5.0
+#    container_name: mongodb
+#    ports:
+#      - "27018:27017"
+#    volumes:
+#      - mongo-db:/data/db
+#    networks:
+#      - app-network
+#
+#  boot-app:
+#    image: praveenkumar333/chatback:latest
+#    build:
+#      context: .
+#      dockerfile: Dockerfile
+#    ports:
+#      - "8080:8080"
+#    environment:
+#      - SPRING_DATA_MONGO_URI=mongodb://mongo:27017/chatapp
+#    depends_on:
+#      - mongo
+#    networks:
+#      - app-network
+#
+#volumes:
+#  mongo-db:
+#
+#
+#networks:
+#  app-network:
+
+# docker-compose.yml for Render deployment (MongoDB Atlas)
+services:
+  boot-app:
+    image: praveenkumar333/chatback:latest
+    ports:
+      - "8080:8080"
+    environment:
+      # MongoDB Atlas connection string (set this in Render Environment Variables)
+      - SPRING_DATA_MONGO_URI=${SPRING_DATA_MONGO_URI}
+    restart: always
+
