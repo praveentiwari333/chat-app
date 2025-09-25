@@ -62,40 +62,6 @@ useEffect(() => {
 //stompClient ko init karna hai
 //subscribe
 
-    //  useEffect(() => {
-     
-    //   const connectWebSocket = () => {
-      
-    //     //SockJS
-
-    //     const sock = new SockJS(`${baseURL}/chat`);
-
-    //     const client = Stomp.over(sock);
-
-    //     client.connect({}, () => {
-          
-    //       setStompClient(client);
-
-    //       toast.success("Connected");
-
-    //       client.subscribe(`/topic/room/${roomId}`, (message) => {
-    //         const newMessage = JSON.parse(message.body);
-    //         console.log("All Messages are", message);
-    //         setMessages((prev) => [...prev, newMessage]);
-    //       });
-
-    //     });
-
-    //   };
-
-    //   if(connected)
-    //   {
-    //     connectWebSocket();
-    //   }
-
-    // }, [roomId]);
-
-
     useEffect(() => {
   const connectWebSocket = () => {
     const sock = new SockJS(`${baseURL}/chat`);
@@ -232,7 +198,6 @@ useEffect(() => {
         <p>{message.content}</p>
       )}
                 <p className="text-xs text-gray-300">{timeAgo(message.timeStamp)}</p>
-                  {console.log("Message timestamp:", message.timeStamp)}
                 </div>
                 </div>
               </div>
