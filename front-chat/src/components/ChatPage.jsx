@@ -188,7 +188,7 @@ useEffect(() => {
               <div key={index} className={`flex  ${message.sender === currentUser ? "justify-end" : "justify-start"} px-4 `}>
                       <div className={`my-2 ${message.sender === currentUser ? "bg-green-600" : "bg-blue-600"} p-2 max-w-xs rounded`}>
                 <div className="flex flex-row gap-2">
-                  <img className="h-10 w-10" src={"https://avatar.iran.liara.run/public"} alt=""/>
+                  <img className="h-10 w-10" src={"https://api.dicebear.com/9.x/pixel-art/svg?seed=" + message.sender} alt=""/>
                 <div className="flex flex-col gap-1">
                 <p className="text-sm font-bold">{message.sender}</p>
                {/* check if content is an image URL */}
