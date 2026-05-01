@@ -3,7 +3,10 @@ export const timeAgo = (date) => {
   const past = new Date(date).getTime(); // Get past time in milliseconds (UTC)
   const diff = Math.floor((now - past) / 1000); // difference in seconds
 
-  if (diff < 60) {
+  if (diff<=0){
+  return "just now";
+  }
+  else if (diff < 60) {
     return `${diff} second${diff !== 1 ? "s" : ""} ago`;
   } else if (diff < 3600) {
     const minutes = Math.floor(diff / 60);
