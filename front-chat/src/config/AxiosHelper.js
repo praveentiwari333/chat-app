@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const baseURL = "https://chatback-latest-6r9u.onrender.com";
+export const baseURL = "https://chatbackend-250i.onrender.com";
 
 export const httpClient = axios.create({
   baseURL: baseURL,
