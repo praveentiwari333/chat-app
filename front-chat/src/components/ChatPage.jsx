@@ -189,12 +189,11 @@ useEffect(() => {
                   <img className="h-10 w-10" src={"https://api.dicebear.com/9.x/pixel-art/svg?seed=" + message.sender} alt=""/>
                 <div className="flex flex-col gap-1">
                 <p className="text-sm font-bold">{message.sender}</p>
-               {/* check if content is an image URL */}
-      {message.type === "image" ? (
-        <img src={message.content} alt="uploaded" className="rounded w-40 h-auto" />
-      ) : (
-         <p>{message.content}</p>
-      )}
+             {message.content.startsWith("http") ? (
+  <img src={message.content} alt="img" />
+) : (
+  <p>{message.content}</p>
+)}
                 <p className="text-xs text-gray-300">{timeAgo(message.timeStamp)}</p>
                 </div>
                 </div>
