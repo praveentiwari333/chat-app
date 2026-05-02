@@ -193,8 +193,7 @@ useEffect(() => {
       {message.type === "image" ? (
         <img src={message.content} alt="uploaded" className="rounded w-40 h-auto" />
       ) : (
-        // <p>{message.content}</p>
-        <img src={message.content} alt="uploaded" className="rounded w-40 h-auto" />
+         <p>{message.content}</p>
       )}
                 <p className="text-xs text-gray-300">{timeAgo(message.timeStamp)}</p>
                 </div>
